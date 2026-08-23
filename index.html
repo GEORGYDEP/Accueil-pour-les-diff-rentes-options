@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portes Ouvertes — Instituts Saint-Luc de Frameries</title>
+    <title>Options du degré supérieur — Instituts Saint-Luc de Frameries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -518,30 +518,6 @@
         }
 
         /* Ruban "Prix à gagner" sur Comptabilité */
-        .card-ribbon {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            z-index: 3;
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #1a0533;
-            background: linear-gradient(135deg, var(--yellow), var(--orange));
-            padding: 6px 13px;
-            border-radius: 100px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            box-shadow: 0 6px 20px rgba(251,146,60,0.5);
-            animation: ribbonPulse 2.5s ease-in-out infinite;
-        }
-
-        @keyframes ribbonPulse {
-            0%,100% { transform: translateY(0);   box-shadow: 0 6px 20px rgba(251,146,60,0.5); }
-            50%     { transform: translateY(-3px);box-shadow: 0 12px 28px rgba(251,146,60,0.7); }
-        }
 
         .card-body {
             padding: 28px 26px 30px;
@@ -623,293 +599,6 @@
         .card-link .arrow { transition: transform 0.3s ease; }
         .card-link:hover .arrow { transform: translateX(4px); }
 
-        /* ═══════════ GAME INVITATION ═══════════ */
-        .game-section {
-            position: relative;
-            margin-bottom: 80px;
-            opacity: 0;
-            animation: fadeSlideUp 0.7s 1s ease both;
-        }
-
-        .game-card {
-            position: relative;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            padding: 60px 52px;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 48px;
-            align-items: center;
-            background:
-                radial-gradient(ellipse at 20% 30%, rgba(255,61,139,0.35) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 70%, rgba(34,211,238,0.3) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 100%, rgba(157,78,221,0.35) 0%, transparent 60%),
-                linear-gradient(135deg, #1a0933 0%, #0f0622 60%, #0a0618 100%);
-            border: 1px solid var(--border);
-            box-shadow:
-                0 30px 80px rgba(0,0,0,0.5),
-                0 0 0 1px rgba(255,255,255,0.04) inset;
-        }
-
-        /* Bord lumineux subtil */
-        .game-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 1px;
-            border-radius: var(--radius-xl);
-            background: linear-gradient(135deg,
-                rgba(255,61,139,0.5),
-                rgba(157,78,221,0.3),
-                rgba(34,211,238,0.5));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-                    mask-composite: exclude;
-            pointer-events: none;
-        }
-
-        /* Étincelles scintillantes */
-        .game-sparkles {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .game-sparkles span {
-            position: absolute;
-            font-size: 14px;
-            opacity: 0;
-            animation: twinkle 4s ease-in-out infinite;
-            color: #fff;
-        }
-        .game-sparkles span:nth-child(1) { top: 18%; left: 8%;  animation-delay: 0s;   font-size: 20px; color: var(--yellow); }
-        .game-sparkles span:nth-child(2) { top: 72%; left: 14%; animation-delay: 1.2s; font-size: 12px; color: var(--cyan); }
-        .game-sparkles span:nth-child(3) { top: 30%; left: 56%; animation-delay: 2.3s; font-size: 16px; color: var(--pink); }
-        .game-sparkles span:nth-child(4) { top: 82%; left: 62%; animation-delay: 0.6s; font-size: 14px; color: var(--lime); }
-        .game-sparkles span:nth-child(5) { top: 22%; left: 88%; animation-delay: 1.8s; font-size: 18px; color: var(--yellow); }
-        .game-sparkles span:nth-child(6) { top: 58%; left: 92%; animation-delay: 3s;   font-size: 12px; color: var(--violet); }
-        .game-sparkles span:nth-child(7) { top: 50%; left: 4%;  animation-delay: 2.5s; font-size: 14px; color: var(--magenta); }
-
-        @keyframes twinkle {
-            0%,100% { opacity: 0;   transform: scale(0.5) rotate(0deg); }
-            50%     { opacity: 1;   transform: scale(1.2) rotate(40deg); }
-        }
-
-        .game-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .game-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--white);
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 7px 16px;
-            border-radius: 100px;
-            margin-bottom: 22px;
-        }
-
-        .game-eyebrow .live-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--lime);
-            box-shadow: 0 0 10px var(--lime);
-            animation: ledBlink 1.6s ease-in-out infinite;
-        }
-
-        @keyframes ledBlink {
-            0%,100% { opacity: 1; }
-            50%     { opacity: 0.4; }
-        }
-
-        .game-title {
-            font-family: 'Fraunces', serif;
-            font-weight: 600;
-            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            color: var(--white);
-            margin-bottom: 18px;
-        }
-
-        .game-title .grad {
-            background: linear-gradient(120deg, var(--yellow), var(--orange) 40%, var(--pink) 75%, var(--magenta));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-style: italic;
-            font-weight: 500;
-        }
-
-        .game-desc {
-            color: var(--text-soft);
-            font-size: 1.04rem;
-            line-height: 1.65;
-            margin-bottom: 28px;
-            max-width: 560px;
-        }
-
-        .game-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 32px;
-        }
-
-        .game-info-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.12);
-            color: var(--text);
-            padding: 9px 16px;
-            border-radius: 100px;
-            font-size: 0.88rem;
-            font-weight: 500;
-        }
-
-        .game-info-chip .ico { font-size: 1.05rem; }
-
-        .game-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, var(--pink) 0%, var(--magenta) 50%, var(--violet) 100%);
-            background-size: 200% 100%;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.05rem;
-            text-decoration: none;
-            padding: 17px 34px;
-            border-radius: 14px;
-            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            box-shadow: 0 12px 40px rgba(233,53,197,0.45);
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 0.01em;
-        }
-
-        .game-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.7s ease;
-        }
-
-        .game-cta:hover {
-            transform: translateY(-4px);
-            background-position: 100% 0;
-            box-shadow: 0 20px 55px rgba(233,53,197,0.65);
-        }
-
-        .game-cta:hover::before { left: 100%; }
-
-        .game-cta .arrow {
-            font-size: 1.15rem;
-            transition: transform 0.3s ease;
-        }
-
-        .game-cta:hover .arrow { transform: translateX(5px); }
-
-        /* Médaille 3D trophée */
-        .game-visual {
-            position: relative;
-            z-index: 1;
-            width: 220px;
-            height: 220px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .game-visual::before {
-            content: '';
-            position: absolute;
-            inset: -20px;
-            background: radial-gradient(circle, rgba(251,191,36,0.3), transparent 70%);
-            filter: blur(20px);
-            animation: auraPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes auraPulse {
-            0%,100% { transform: scale(1);    opacity: 0.6; }
-            50%     { transform: scale(1.15); opacity: 1; }
-        }
-
-        .game-seal {
-            position: relative;
-            width: 190px;
-            height: 190px;
-            border-radius: 50%;
-            background:
-                radial-gradient(circle at 30% 25%, #fde68a, var(--yellow) 45%, var(--orange) 85%, #b45309 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #3d1a05;
-            box-shadow:
-                0 0 0 6px rgba(251,191,36,0.15),
-                0 0 0 12px rgba(251,191,36,0.08),
-                0 25px 60px rgba(251,146,60,0.55),
-                inset 0 -8px 20px rgba(180,83,9,0.3),
-                inset 0 8px 20px rgba(255,255,255,0.25);
-            animation: sealFloat 5s ease-in-out infinite;
-        }
-
-        @keyframes sealFloat {
-            0%,100% { transform: translateY(0)     rotate(-6deg); }
-            50%     { transform: translateY(-12px) rotate(-3deg); }
-        }
-
-        .game-seal::before {
-            content: '';
-            position: absolute;
-            inset: 12px;
-            border: 2px dashed rgba(61,26,5,0.25);
-            border-radius: 50%;
-        }
-
-        .seal-icon {
-            font-size: 46px;
-            margin-bottom: 4px;
-            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
-        }
-
-        .seal-text-top {
-            font-family: 'Fraunces', serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            line-height: 1;
-        }
-
-        .seal-text-bottom {
-            font-size: 0.64rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            margin-top: 4px;
-            opacity: 0.75;
-        }
-
         /* ═══════════ FOOTER ═══════════ */
         .footer {
             position: relative;
@@ -959,28 +648,6 @@
         }
 
         /* ═══════════ RESPONSIVE ═══════════ */
-        @media (max-width: 900px) {
-            .game-card {
-                grid-template-columns: 1fr;
-                padding: 46px 28px;
-                gap: 28px;
-                text-align: center;
-            }
-            .game-content { order: 2; }
-            .game-visual  {
-                order: 1;
-                margin: 0 auto;
-                width: 180px;
-                height: 180px;
-            }
-            .game-seal {
-                width: 170px;
-                height: 170px;
-            }
-            .game-info { justify-content: center; }
-            .game-desc { margin-left: auto; margin-right: auto; }
-        }
-
         @media (max-width: 768px) {
             .header {
                 padding: 54px 0 48px;
@@ -994,12 +661,6 @@
                 font-size: 0.78rem;
                 padding: 10px 16px;
             }
-            .game-card { padding: 38px 22px; }
-            .game-cta  {
-                width: 100%;
-                justify-content: center;
-                padding: 16px 24px;
-            }
             .blob { filter: blur(60px); }
             .blob-1, .blob-2, .blob-3, .blob-4, .blob-5 {
                 width: 340px; height: 340px;
@@ -1009,15 +670,12 @@
         @media (max-width: 400px) {
             .header h1 { font-size: 2.2rem; }
             .card-body { padding: 22px 20px 26px; }
-            .seal-text-top { font-size: 0.82rem; }
         }
 
         /* Respect prefers-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
-            .blob, .confetti-layer span, .game-sparkles span,
-            .game-seal, .event-banner, .game-cta, .card-ribbon,
-            .pulse-dot, .live-dot, .game-visual::before,
-            .header h1 .grad {
+            .blob, .confetti-layer span, .event-banner,
+            .pulse-dot, .header h1 .grad {
                 animation: none !important;
             }
         }
@@ -1035,9 +693,9 @@
     </div>
 
     <!-- ═══════════ EVENT BANNER ═══════════ -->
-    <div class="event-banner" role="region" aria-label="Événement en cours">
+    <div class="event-banner" role="region" aria-label="Information">
         <span class="pulse-dot" aria-hidden="true"></span>
-        Portes Ouvertes — Samedi 18 avril 2026 · De 10h à 14h · Venez comme vous êtes !
+        Options disponibles pour le degré supérieur · Secteur Économie &amp; Services · Venez comme vous êtes !
     </div>
 
     <!-- ═══════════ HEADER / HERO ═══════════ -->
@@ -1060,14 +718,14 @@
             </h1>
 
             <p class="header-subtitle">
-                Une matinée pour explorer nos formations, rencontrer nos équipes
-                et imaginer votre avenir. On vous attend&nbsp;!
+                Découvrez les options du degré supérieur proposées à l'Institut&nbsp;:
+                explorez nos formations, leurs débouchés et imaginez votre avenir.
             </p>
 
             <div class="hero-meta">
-                <span class="meta-chip"><span class="ico">📅</span> Samedi 18 avril</span>
-                <span class="meta-chip"><span class="ico">🕙</span> 10h – 14h</span>
-                <span class="meta-chip"><span class="ico">🎁</span> Cadeaux à gagner</span>
+                <span class="meta-chip"><span class="ico">🎓</span> Degré supérieur — 4ᵉ à 7ᵉ année</span>
+                <span class="meta-chip"><span class="ico">📚</span> 3 options au choix</span>
+                <span class="meta-chip"><span class="ico">✅</span> CESS &amp; certificat de qualification</span>
             </div>
         </div>
     </header>
@@ -1077,7 +735,7 @@
         <div class="section-label">
             <span>
                 <span class="dot-led"></span>
-                Nos formations
+                Nos options du degré supérieur
             </span>
         </div>
 
@@ -1087,7 +745,6 @@
             <article class="card card--compta">
                 <div class="card-visual">
                     <span class="card-type">Technique de qualification</span>
-                    <span class="card-ribbon">🎁 Prix à gagner</span>
                     <div class="card-icon">📊</div>
                 </div>
                 <div class="card-body">
@@ -1152,53 +809,6 @@
 
         </div>
 
-        <!-- ═══════════ GAME INVITATION ═══════════ -->
-        <section class="game-section" aria-labelledby="game-title">
-            <div class="game-card">
-
-                <div class="game-sparkles" aria-hidden="true">
-                    <span>✦</span><span>✧</span><span>✦</span>
-                    <span>✧</span><span>✦</span><span>✧</span><span>✦</span>
-                </div>
-
-                <div class="game-content">
-                    <div class="game-eyebrow">
-                        <span class="live-dot"></span>
-                        Défi spécial Comptabilité
-                    </div>
-                    <h2 class="game-title" id="game-title">
-                        Jouez, gagnez, <span class="grad">repartez avec un cadeau&nbsp;!</span>
-                    </h2>
-                    <p class="game-desc">
-                        Notre équipe Comptabilité vous a préparé un mini-jeu ludique
-                        et accessible à tous. Quelques clics, un peu de malice&nbsp;—
-                        puis rejoignez-nous au 2ᵉ étage pour récupérer votre récompense&nbsp;!
-                    </p>
-
-                    <div class="game-info">
-                        <span class="game-info-chip"><span class="ico">📍</span> 2ᵉ étage</span>
-                        <span class="game-info-chip"><span class="ico">⏱️</span> 2 minutes</span>
-                        <span class="game-info-chip"><span class="ico">🎁</span> Prix à gagner</span>
-                    </div>
-
-                    <a href="https://georgydep.github.io/Activit-1-JPO-2025-2026/"
-                       target="_blank" class="game-cta">
-                        Je tente ma chance
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-
-                <div class="game-visual" aria-hidden="true">
-                    <div class="game-seal">
-                        <div class="seal-icon">🏆</div>
-                        <div class="seal-text-top">Défi JPO</div>
-                        <div class="seal-text-bottom">2ᵉ étage</div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
     </main>
 
     <!-- ═══════════ FOOTER ═══════════ -->
@@ -1230,7 +840,7 @@ var TRACKER_URL = 'https://script.google.com/macros/s/AKfycbwHzA6aRUtdTkPycAFznt
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
         a: session.id,
-        b: 'Accueil - Page principale',
+        b: 'Accueil - Options degre superieur',
         c: window.location.href,
         d: document.referrer || 'direct',
         e: navigator.userAgent.substring(0, 150),
